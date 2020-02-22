@@ -33,6 +33,7 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.WrongLoginInfoLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -78,11 +79,23 @@
             this.label2.Text = "Password";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // WrongLoginInfoLabel
+            // 
+            this.WrongLoginInfoLabel.AutoSize = true;
+            this.WrongLoginInfoLabel.Location = new System.Drawing.Point(310, 337);
+            this.WrongLoginInfoLabel.Name = "WrongLoginInfoLabel";
+            this.WrongLoginInfoLabel.Size = new System.Drawing.Size(224, 13);
+            this.WrongLoginInfoLabel.TabIndex = 5;
+            this.WrongLoginInfoLabel.Text = "Username and Password Combination Wrong!";
+            this.WrongLoginInfoLabel.Visible = false;
+            this.WrongLoginInfoLabel.Click += new System.EventHandler(this.label3_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.WrongLoginInfoLabel);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxUsername);
@@ -90,6 +103,7 @@
             this.Controls.Add(this.buttonLogin);
             this.Name = "LoginForm";
             this.Text = "LoginForm";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -102,5 +116,6 @@
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label WrongLoginInfoLabel;
     }
 }
