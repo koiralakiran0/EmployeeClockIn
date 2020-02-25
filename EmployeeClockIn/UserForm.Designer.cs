@@ -60,6 +60,7 @@
             this.Controls.Add(this.buttoncheckin);
             this.Name = "UserForm";
             this.Text = "UserForm";
+            this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -40,6 +40,7 @@
             this.buttonAddNewEmployee.TabIndex = 0;
             this.buttonAddNewEmployee.Text = "Add New Employee";
             this.buttonAddNewEmployee.UseVisualStyleBackColor = true;
+            this.buttonAddNewEmployee.Click += new System.EventHandler(this.buttonAddNewEmployee_Click);
             // 
             // buttonRemoveEmployee
             // 

@@ -16,5 +16,10 @@ namespace EmployeeClockIn
         {
             InitializeComponent();
         }
+
+        private void UserForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

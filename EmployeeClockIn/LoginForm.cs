@@ -64,7 +64,7 @@ namespace EmployeeClockIn
 
         private void populateDictionary(Dictionary<string, string> users)
         {
-            var path = Path.Combine("C:\\Users\\koira\\Documents\\Visual Studio 2017\\Code\\EmployeeClockIn\\EmployeeClockIn\\Users.txt");
+            var path = Path.Combine("C:\\temp\\Users.txt");
             using (StreamReader file = new StreamReader(path))
             {
                 string ln;

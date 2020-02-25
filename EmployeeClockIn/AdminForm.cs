@@ -16,5 +16,10 @@ namespace EmployeeClockIn
         {
             InitializeComponent();
         }
+
+        private void buttonAddNewEmployee_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
