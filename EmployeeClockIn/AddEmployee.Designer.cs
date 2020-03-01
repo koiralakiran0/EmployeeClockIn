@@ -38,7 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBoxClockedInStatus = new System.Windows.Forms.CheckBox();
             this.checkBoxAdminStatus = new System.Windows.Forms.CheckBox();
             this.buttonAddEmployee = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -123,20 +122,10 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Password";
             // 
-            // checkBoxClockedInStatus
-            // 
-            this.checkBoxClockedInStatus.AutoSize = true;
-            this.checkBoxClockedInStatus.Location = new System.Drawing.Point(94, 236);
-            this.checkBoxClockedInStatus.Name = "checkBoxClockedInStatus";
-            this.checkBoxClockedInStatus.Size = new System.Drawing.Size(110, 17);
-            this.checkBoxClockedInStatus.TabIndex = 10;
-            this.checkBoxClockedInStatus.Text = "Clocked In Status";
-            this.checkBoxClockedInStatus.UseVisualStyleBackColor = true;
-            // 
             // checkBoxAdminStatus
             // 
             this.checkBoxAdminStatus.AutoSize = true;
-            this.checkBoxAdminStatus.Location = new System.Drawing.Point(94, 268);
+            this.checkBoxAdminStatus.Location = new System.Drawing.Point(94, 240);
             this.checkBoxAdminStatus.Name = "checkBoxAdminStatus";
             this.checkBoxAdminStatus.Size = new System.Drawing.Size(88, 17);
             this.checkBoxAdminStatus.TabIndex = 11;
@@ -160,7 +149,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.buttonAddEmployee);
             this.Controls.Add(this.checkBoxAdminStatus);
-            this.Controls.Add(this.checkBoxClockedInStatus);
             this.Controls.Add(this.textBoxLoginID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxPassword);
@@ -190,7 +178,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBoxClockedInStatus;
         private System.Windows.Forms.CheckBox checkBoxAdminStatus;
         private System.Windows.Forms.Button buttonAddEmployee;
     }

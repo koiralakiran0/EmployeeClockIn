@@ -9,21 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.Data.SqlClient;
-using System.Data;
 using System.IO;
 
 namespace EmployeeClockIn
 {
     public partial class LoginForm : Form
     {
-        String username;
-        String password;
         Thread thread;
 
         public LoginForm()
         {
             InitializeComponent();
-            username = password = "";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -33,14 +29,13 @@ namespace EmployeeClockIn
 
         private void button1_Click(object sender, EventArgs e)
         {
-            username = textBoxUsername.Text;
-            password = textBoxPassword.Text;
-            Dictionary<String, String> users = new Dictionary<string, string>();
-            populateDictionary(users);
+            String username = textBoxUsername.Text;
+            String password = textBoxPassword.Text;
+            EmployeeController.loadEmployees();
 
-            if (users.ContainsKey(username) && users[username].Equals(password)) 
+            if (EmployeeController.isValidEmployee(username, password)) 
             {
-                if (username == "koiralakiran0")
+                if (EmployeeController.getEmployees()[username].getAdminStatus())
                 {
                     thread = new Thread(openAdminForm);
                     thread.SetApartmentState(ApartmentState.STA);
@@ -60,23 +55,6 @@ namespace EmployeeClockIn
             }
         }
 
-        
-
-        private void populateDictionary(Dictionary<string, string> users)
-        {
-            var path = Path.Combine("C:\\temp\\Users.txt");
-            using (StreamReader file = new StreamReader(path))
-            {
-                string ln;
-
-                while ((ln = file.ReadLine()) != null)
-                {
-                    string[] str = ln.Split(',');
-                    users.Add(str[0], str[1]);
-                }
-                file.Close();
-            }
-        }
 
         private void openUserForm()
         {

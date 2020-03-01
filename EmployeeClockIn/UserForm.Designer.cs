@@ -30,6 +30,8 @@
         {
             this.buttoncheckin = new System.Windows.Forms.Button();
             this.buttonClockOut = new System.Windows.Forms.Button();
+            this.labelClockedIn = new System.Windows.Forms.Label();
+            this.labelClockedOut = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttoncheckin
@@ -40,6 +42,7 @@
             this.buttoncheckin.TabIndex = 0;
             this.buttoncheckin.Text = "Clock In";
             this.buttoncheckin.UseVisualStyleBackColor = true;
+            this.buttoncheckin.Click += new System.EventHandler(this.buttoncheckin_Click);
             // 
             // buttonClockOut
             // 
@@ -50,18 +53,42 @@
             this.buttonClockOut.Text = "Clock Out";
             this.buttonClockOut.UseVisualStyleBackColor = true;
             this.buttonClockOut.Visible = false;
+            this.buttonClockOut.Click += new System.EventHandler(this.buttonClockOut_Click);
+            // 
+            // labelClockedIn
+            // 
+            this.labelClockedIn.AutoSize = true;
+            this.labelClockedIn.Location = new System.Drawing.Point(361, 381);
+            this.labelClockedIn.Name = "labelClockedIn";
+            this.labelClockedIn.Size = new System.Drawing.Size(58, 13);
+            this.labelClockedIn.TabIndex = 2;
+            this.labelClockedIn.Text = "Clocked In";
+            this.labelClockedIn.Visible = false;
+            // 
+            // labelClockedOut
+            // 
+            this.labelClockedOut.AutoSize = true;
+            this.labelClockedOut.Location = new System.Drawing.Point(353, 406);
+            this.labelClockedOut.Name = "labelClockedOut";
+            this.labelClockedOut.Size = new System.Drawing.Size(66, 13);
+            this.labelClockedOut.TabIndex = 3;
+            this.labelClockedOut.Text = "Clocked Out";
+            this.labelClockedOut.Visible = false;
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelClockedOut);
+            this.Controls.Add(this.labelClockedIn);
             this.Controls.Add(this.buttonClockOut);
             this.Controls.Add(this.buttoncheckin);
             this.Name = "UserForm";
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -69,5 +96,7 @@
 
         private System.Windows.Forms.Button buttoncheckin;
         private System.Windows.Forms.Button buttonClockOut;
+        private System.Windows.Forms.Label labelClockedIn;
+        private System.Windows.Forms.Label labelClockedOut;
     }
 }

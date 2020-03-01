@@ -24,9 +24,9 @@ namespace EmployeeClockIn
             String userName = textBoxUserName.Text;
             String password = textBoxPassword.Text;
             String loginID = textBoxLoginID.Text;
-            Boolean clockedInStatus = checkBoxClockedInStatus.Checked;
             Boolean adminStatus = checkBoxAdminStatus.Checked;
-            Employee employee = new Employee(firstName, lastName, userName, password, loginID, clockedInStatus, adminStatus);
+            Employee employee = new Employee(firstName, lastName, userName, password, loginID, false, adminStatus);
+            EmployeeController.addEmployee(employee);
         }
     }
 }
