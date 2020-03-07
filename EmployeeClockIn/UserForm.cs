@@ -16,20 +16,6 @@ namespace EmployeeClockIn
         public UserForm()
         {
             InitializeComponent();
-            if (EmployeeController.getCurrentEmployee().getClockedInStatus())
-            {
-                buttoncheckin.Visible = true;
-                labelClockedOut.Visible = true;
-                buttonClockOut.Visible = false;
-                labelClockedIn.Visible = false;
-            }
-            else
-            {
-                buttonClockOut.Visible = true;
-                labelClockedIn.Visible = true;
-                buttoncheckin.Visible = false;
-                labelClockedOut.Visible = false;
-            }
         }
 
         private void UserForm_Load(object sender, EventArgs e)

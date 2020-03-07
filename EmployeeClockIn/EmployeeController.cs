@@ -56,6 +56,15 @@ namespace EmployeeClockIn
                     file.WriteLine(emp.getUserName() + "," + status + "," + DateTime.Now.ToString());
                 }
             }
+
+            if (status == "clockIn")
+            {
+                emp.setClockedInStatus(true);
+            }
+            else if (status == "clockOut")
+            {
+                emp.setClockedInStatus(false);
+            }
         }
 
         public static void addEmployee(Employee emp)
