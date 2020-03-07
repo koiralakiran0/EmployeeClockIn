@@ -25,6 +25,7 @@ namespace EmployeeClockIn
             thread = new Thread(openNewEmployeeForm);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
+            this.Close();
         }
 
         private void openNewEmployeeForm()
@@ -32,9 +33,20 @@ namespace EmployeeClockIn
             Application.Run(new AddEmployee());
         }
 
-        private void listViewEmployees_SelectedIndexChanged(object sender, EventArgs e)
+        private void AdminForm_Load(object sender, EventArgs e)
         {
+            Dictionary<String, Employee> dictionary = EmployeeController.getEmployees();
 
+            foreach (Employee emp in dictionary.Values)
+            {
+                ListViewItem item = new ListViewItem(emp.getFirstName() + " " + emp.getLastName());
+                item.SubItems.Add(emp.getUserName());
+                item.SubItems.Add(emp.getLoginID());
+                item.SubItems.Add(emp.getPassword());
+                item.SubItems.Add(emp.getClockedInStatus().ToString());
+                item.SubItems.Add(emp.getAdminStatus().ToString());
+                listViewEmployees.Items.Add(item);
+            }
         }
     }
 }

@@ -8,13 +8,15 @@ namespace EmployeeClockIn
 {
     class Employee
     {
-        String firstName, lastName, userName, password, loginID;
-        Boolean clockedInStatus, adminStatus;
+        private String firstName, lastName, userName, password, loginID;
+        private Boolean clockedInStatus, adminStatus;
+        private double countingTotal;
 
         public Employee()
         {
             firstName = lastName = userName = password = loginID = "";
             clockedInStatus = adminStatus = false;
+            countingTotal = 0;
         }
 
         public Employee(String firstName, String lastName, String userName, String password, String loginID, Boolean clockedInStatus, Boolean adminStatus)
@@ -26,9 +28,20 @@ namespace EmployeeClockIn
             this.loginID = loginID;
             this.clockedInStatus = clockedInStatus;
             this.adminStatus = adminStatus;
+            this.countingTotal = 0;
         }
 
-        public void setFirstName(String firstName) {
+        public void setCountingTotal(double countTotal) {
+            this.countingTotal = countTotal;
+        }
+
+        public double getCountingTotal()
+        {
+            return this.countingTotal;
+        }
+
+        public void setFirstName(String firstName)
+        {
             this.firstName = firstName;
         }
 

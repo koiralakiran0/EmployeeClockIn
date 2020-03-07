@@ -125,7 +125,7 @@
             // checkBoxAdminStatus
             // 
             this.checkBoxAdminStatus.AutoSize = true;
-            this.checkBoxAdminStatus.Location = new System.Drawing.Point(94, 240);
+            this.checkBoxAdminStatus.Location = new System.Drawing.Point(94, 226);
             this.checkBoxAdminStatus.Name = "checkBoxAdminStatus";
             this.checkBoxAdminStatus.Size = new System.Drawing.Size(88, 17);
             this.checkBoxAdminStatus.TabIndex = 11;
@@ -134,7 +134,7 @@
             // 
             // buttonAddEmployee
             // 
-            this.buttonAddEmployee.Location = new System.Drawing.Point(94, 343);
+            this.buttonAddEmployee.Location = new System.Drawing.Point(94, 263);
             this.buttonAddEmployee.Name = "buttonAddEmployee";
             this.buttonAddEmployee.Size = new System.Drawing.Size(237, 35);
             this.buttonAddEmployee.TabIndex = 12;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(489, 346);
             this.Controls.Add(this.buttonAddEmployee);
             this.Controls.Add(this.checkBoxAdminStatus);
             this.Controls.Add(this.textBoxLoginID);
@@ -161,6 +161,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AddEmployee";
             this.Text = "AddEmployee";
+            this.Load += new System.EventHandler(this.AddEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

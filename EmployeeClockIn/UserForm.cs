@@ -29,8 +29,7 @@ namespace EmployeeClockIn
             labelClockedIn.Visible = true;
             buttoncheckin.Visible = false;
             labelClockedOut.Visible = false;
-            //EmployeeController.
-            dataWrite("clockIn");
+            EmployeeController.writeUserData("clockIn");
         }
 
         private void buttonClockOut_Click(object sender, EventArgs e)
@@ -39,29 +38,7 @@ namespace EmployeeClockIn
             labelClockedOut.Visible = true;
             buttonClockOut.Visible = false;
             labelClockedIn.Visible = false;
-        }
-
-        private void dataWrite(string v)
-        {
-            Employee emp = EmployeeController.getCurrentEmployee();
-            String path = @"C:/temp/clockInData/" + emp.getUserName() + "/data.csv";
-            if (!File.Exists(path))
-            {
-                FileInfo fileInfo = new FileInfo(path);
-                fileInfo.Directory.Create();
-                using (StreamWriter file = new StreamWriter(path, true))
-                {
-                    file.WriteLine(emp.getUserName() + "," + v);
-                }
-            }
-            else if (File.Exists(path))
-            {
-                using (StreamWriter file = new StreamWriter(path, true))
-                {
-                    file.WriteLine(emp.getUserName() + "," + v);
-                }
-            }
-            
+            EmployeeController.writeUserData("clockOut");
         }
     }
 }

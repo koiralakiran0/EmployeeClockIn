@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,6 +13,7 @@ namespace EmployeeClockIn
 {
     public partial class AddEmployee : Form
     {
+        private Thread thread;
         public AddEmployee()
         {
             InitializeComponent();
@@ -27,6 +29,21 @@ namespace EmployeeClockIn
             Boolean adminStatus = checkBoxAdminStatus.Checked;
             Employee employee = new Employee(firstName, lastName, userName, password, loginID, false, adminStatus);
             EmployeeController.addEmployee(employee);
+
+            thread = new Thread(openAdminForm);
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            this.Close();
+        }
+
+        private void openAdminForm()
+        {
+            Application.Run(new AdminForm());
+        }
+
+        private void AddEmployee_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
