@@ -20,6 +20,7 @@ namespace EmployeeClockIn
         public LoginForm()
         {
             InitializeComponent();
+            EmployeeController.loadEmployees();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -31,7 +32,6 @@ namespace EmployeeClockIn
         {
             String username = textBoxUsername.Text;
             String password = textBoxPassword.Text;
-            EmployeeController.loadEmployees();
 
             if (EmployeeController.isValidEmployee(username, password)) 
             {
@@ -44,6 +44,7 @@ namespace EmployeeClockIn
                 }
                 else
                 {
+                    EmployeeController.setCurrentEmployee(EmployeeController.getEmployees()[username]);
                     thread = new Thread(openUserForm);
                     thread.SetApartmentState(ApartmentState.STA);
                     thread.Start();

@@ -14,7 +14,7 @@ namespace EmployeeClockIn
 
         public static void loadEmployees()
         {
-            users.Add("koiralakiran0", new Employee("Kiran", "Koirala", "koiralakiran0","12345","koiralakiran0",false, true));
+            users.Add("koiralakiran0", new Employee("Kiran", "Koirala", "koiralakiran0", "12345", "koiralakiran0", false, true));
 
             String path = @"C:/temp/clockInData/employeeInfo.csv";
             if (File.Exists(path))
@@ -25,7 +25,7 @@ namespace EmployeeClockIn
                     while ((line = reader.ReadLine()) != null)
                     {
                         String[] str = line.Split(',');
-                        users.Add(str[0], new Employee(str[0], str[1], str[2], str[3], str[4], Boolean.Parse(str[5]), Boolean.Parse(str[6])));
+                        users.Add(str[2], new Employee(str[0], str[1], str[2], str[3], str[4], Boolean.Parse(str[5]), Boolean.Parse(str[6])));
                     }
                 }
             }
